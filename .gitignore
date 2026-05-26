@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+.env
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Generated model files
+*.pkl
+*.h5
+*.joblib
+model_columns.json
+
+# Datasets (download from Kaggle)
+data/*.csv
+data/*.xlsx
+data/*.parquet
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
