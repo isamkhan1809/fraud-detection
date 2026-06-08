@@ -9,14 +9,14 @@
 ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝    ╚═════╝ ╚══════╝   ╚═╝   ╚══════╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
 ```
 
-### *Find the Signal in the Noise. Stop Fraud Before It Lands.*
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=FF6B35&center=true&vCenter=true&width=700&lines=Finding+0.2%25+Needles+in+a+99.8%25+Haystack+%F0%9F%94%8D;Neural+Network+%7C+Isolation+Forest+%7C+Autoencoder;Supervised+%26+Unsupervised+Anomaly+Detection;Stop+Fraud+Before+It+Lands+%F0%9F%9B%A1%EF%B8%8F" alt="Typing SVG" />
+
+<img src="https://media.giphy.com/media/077i6AULCXc0FKTj9s/giphy.gif" width="360" />
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.15-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://tensorflow.org)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
-
----
 
 > **A multi-model fraud detection system combining supervised deep learning and four unsupervised anomaly detectors — built for the hardest problem in fintech: finding 0.2% needles in a 99.8% haystack.**
 
@@ -26,7 +26,7 @@
 
 ## ◈ The Challenge
 
-Credit card fraud costs billions annually. The core difficulty is **extreme class imbalance** — fraud is rare, yet catastrophically expensive when missed. This project tackles the problem from two angles simultaneously: supervised learning when labels exist, and unsupervised anomaly detection when they don't.
+Credit card fraud costs billions annually. The core difficulty is **extreme class imbalance** — fraud is rare, yet catastrophically expensive when missed. This project tackles the problem from two angles: supervised learning when labels exist, and unsupervised anomaly detection when they don't.
 
 ```
 ┌────────────────────────────────────────────────────────────────────┐
@@ -37,15 +37,12 @@ Credit card fraud costs billions annually. The core difficulty is **extreme clas
 │                                  │                                 │
 │              ┌───────────────────┴───────────────────┐            │
 │              │ SUPERVISED                UNSUPERVISED │            │
-│              │                                        │            │
 │              │ Neural Network ──→ 93% ROC-AUC         │            │
-│              │                                        │            │
 │              │ Isolation Forest ──→ anomaly score     │            │
 │              │ Local Outlier Factor ──→ density score │            │
 │              │ One-Class SVM ──→ kernel boundary      │            │
 │              │ Autoencoder ──→ reconstruction error   │            │
 │              └────────────────────────────────────────┘            │
-│                                  │                                 │
 │                    Unified Evaluation + Comparison                 │
 └────────────────────────────────────────────────────────────────────┘
 ```
@@ -64,9 +61,7 @@ Credit card fraud costs billions annually. The core difficulty is **extreme clas
 
 ---
 
-## ◈ The Models Explained
-
-### Neural Network (Supervised)
+## ◈ Neural Network Architecture
 
 ```
 Input (30 features)
@@ -77,25 +72,13 @@ Input (30 features)
 
 Trained with **class weights** to handle imbalance. Best precision in production.
 
-### Isolation Forest
+---
 
-Anomalies are isolated **faster** in random decision trees. Fraudulent transactions require fewer splits — they're outliers by nature.
+## ◈ When to Use Each Approach
 
-### Autoencoder
+**Supervised** — large labeled dataset, stable fraud patterns, low false-positive tolerance
 
-Trains to reconstruct **normal** transactions. At inference time, fraud produces **high reconstruction error** — threshold at mean + 3σ.
-
-### Use Supervised When
-
-- Large labeled historical dataset exists
-- False positives are costly (blocking real customers)
-- Fraud patterns are stable
-
-### Use Unsupervised When
-
-- Labels are scarce or expensive
-- You need to catch **novel** fraud types not in training data
-- Deploying a second-pass filter on top of supervised models
+**Unsupervised** — no labels available, novel/evolving fraud types, second-pass filter on top of supervised
 
 ---
 
@@ -108,28 +91,17 @@ Trains to reconstruct **normal** transactions. At inference time, fraud produces
 | `Amount` | Transaction value (USD) |
 | `Class` | Target: 0=legitimate, 1=fraud |
 
-To use the real Kaggle dataset: download `creditcard.csv` from [mlg-ulb/creditcardfraud](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) → place in `data/`.
-
 ---
 
 ## ◈ Quick Start
 
 ```bash
-# 1. Clone
 git clone https://github.com/isamkhan1809/fraud-detection.git
 cd fraud-detection
-
-# 2. Virtual environment
 python -m venv venv && source venv/bin/activate
-
-# 3. Install
 pip install -r requirements.txt
-
-# 4. Launch notebook
 jupyter notebook fraud_detection.ipynb
 ```
-
-Run all cells — synthetic data is generated automatically if no CSV is present.
 
 ---
 
@@ -145,20 +117,16 @@ fraud-detection/
 
 ---
 
-## ◈ Key Concepts Demonstrated
-
-- Imbalanced classification with class weights and stratified splits
-- Isolation-based, density-based, kernel-based, and reconstruction-based anomaly detection
-- Neural network regularisation with Dropout
-- Autoencoder threshold calibration from reconstruction error distribution
-- Unified precision/recall/F1 comparison across all five models
-
----
-
 <div align="center">
 
 **Five Models. One Goal. Zero Fraud.**
 
 *MIT License*
+
+<br/>
+
+Built by [Isam Khan](https://github.com/isamkhan1809) &nbsp;|&nbsp;
+<a href="https://linkedin.com/in/isam-khan-3a1260292"><img src="https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white&labelColor=000000"/></a>
+<a href="https://isamkhan.com"><img src="https://img.shields.io/badge/-isamkhan.com-00D9FF?style=flat-square&logo=googlechrome&logoColor=white&labelColor=000000"/></a>
 
 </div>
