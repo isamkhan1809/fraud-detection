@@ -11,7 +11,7 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=FF6B35&center=true&vCenter=true&width=700&lines=Finding+0.2%25+Needles+in+a+99.8%25+Haystack+%F0%9F%94%8D;Neural+Network+%7C+Isolation+Forest+%7C+Autoencoder;Supervised+%26+Unsupervised+Anomaly+Detection;Stop+Fraud+Before+It+Lands+%F0%9F%9B%A1%EF%B8%8F" alt="Typing SVG" />
 
-<img src="https://media.giphy.com/media/077i6AULCXc0FKTj9s/giphy.gif" width="360" />
+<img src="https://media.giphy.com/media/TYSwbnQ4wpiks0XhCF/giphy.gif" width="360" />
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.15-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://tensorflow.org)
